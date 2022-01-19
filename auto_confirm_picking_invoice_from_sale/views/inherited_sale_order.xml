@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_button_automate_sale_order" model="ir.ui.view">
+            <field name="name">sale.order.form.button.automate</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+				<xpath expr="//button[@id='action_confirm']" position="attributes">
+					<attribute name="string">Confirm Devis</attribute>
+			   </xpath>
+            	<xpath expr="//button[@id='action_confirm']" position="after">
+                    <field name="category_compte" invisible="1"/>
+					<button name="action_confirm_bl" id="action_automate_bl"
+                        string="Confirm BL" class="btn-primary" type="object" attrs="{'invisible': [('state', 'in', ('sale','cancel','done'))]}"
+  						/>
+					<button name="action_confirm_invoice" id="action_automate_invoice"
+                        string="Confirm Facture" class="btn-primary" type="object" attrs="{'invisible': [('state', 'in', ('sale','cancel','done'))]}"
+  						/>
+			   </xpath>
+        	</field>
+		</record>
+
+		<record id="view_order_form_print" model="ir.ui.view">
+            <field name="name">sale.order.form.delivery</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_confirm']" position="after">
+                    <field name="category_compte" invisible="1"/>
+                    <button name="print_picking" string="Imprimer BL"
+                        type="object" class="btn-primary"
+                        attrs="{'invisible': ['|',('delivery_count', '=', 0),('state', 'not in', ['sale','done'])]}"
+                        groups="stock.group_stock_user"/>
+
+                    <button name="print_invoice" id="print_invoice"
+                            string="Imprimer Facture"
+                            attrs="{'invisible': ['|',('invoice_count', '=', 0),('state', 'not in', ['sale','done'])]}"
+                            class="btn-primary" type="object"
+                            groups="stock.group_stock_user"/>
+                </xpath>
+            </field>
+    </record>
+    </data>
+</odoo>
