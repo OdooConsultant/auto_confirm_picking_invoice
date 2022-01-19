@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Browseinfo. See LICENSE file for full copyright and licensing details.
 {
 	'name': 'Automated Sale Order Processing',
-	'version': '15.0.0.0',
+	'version': '14.0.0.0',
 	'summary': 'Auto sale to Invoice auto sale order processing automatic sales order process auto sales process Automatic sales Invoice confirmation processing automatic workflow for sales order auto process sale order auto workflow sale auto workflow sales single click',
 	'description': '''
 	odoo Automatic sale order Invoice and Delivery confirmation and processing auto sales odoo
