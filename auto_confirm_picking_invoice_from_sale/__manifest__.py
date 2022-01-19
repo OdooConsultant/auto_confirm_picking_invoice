@@ -35,4 +35,5 @@
 	'qweb': [
 			],
     "images":['static/description/Banner.png'],
+	'license': 'OPL-1',
 }
