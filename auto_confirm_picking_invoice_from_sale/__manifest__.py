@@ -24,7 +24,7 @@
 	'author': 'medconsultantweb@gmail.com',
 	'website': 'https://www.weblemon.org',
 	'category': 'Sales',
-	'depends': ['base','sale_management','stock', 'sale_easy', 'account'],
+	'depends': ['base','sale_management','stock', 'account'],
 	'data': [
 		'security/ir.model.access.csv',
 		'views/inherited_sale_order.xml',
